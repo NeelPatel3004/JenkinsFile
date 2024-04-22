@@ -1,0 +1,99 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                    echo "Use a build automation tool like Maven"
+                    echo "mvn clean package"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Build Success Notification",
+                    body: "The pipeline has builed successfully."
+                }
+            }
+        }
+        stage('Unit and Integration Tests') {
+            steps {
+                    echo "Use test automation tools like JUnit or TestNG for unit tests"
+                    echo "mvn test"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Unit and Integration Test Success Notification",
+                    body: "The pipeline has integrated successfully."
+                }
+            }
+        }
+        stage('Code Analysis') {
+            steps {
+                    echo "Use a code analysis tool like SonarQube"
+                    echo "Install and configure SonarQube Scanner in Jenkins"
+                    echo "sonar-scanner"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Code Analysis Success Notification",
+                    body: "The pipeline has analysed successfully."
+                }
+            }
+        }
+        stage('Security Scan') {
+            steps {
+                    echo "Use a security scanning tool like OWASP Dependency-Check"
+                    echo "Install and configure Dependency-Check in Jenkins"
+                    echo "dependency-check.sh -out reports/security-report.html"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Security Scan Success Notification",
+                    body: "The pipeline has secured successfully."
+                }
+            }
+        }
+        stage('Deploy to Staging') {
+            steps {
+                    echo "Use a deployment tool or script to deploy to staging server"
+                    echo "ansible-playbook deploy-to-staging.yml"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Deploted Success Notification",
+                    body: "The pipeline has deployed successfully."
+                }
+            }
+        }
+        stage('Integration Tests on Staging') {
+            steps {
+                    echo "Run integration tests on the staging environment"
+                    echo "mvn integration-test"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Integrated Test on Staging Success Notification",
+                    body: "The pipeline has staging integration successfully."
+                }
+            }
+        }
+        stage('Deploy to Production') {
+            steps {
+                    echo "Use a deployment tool or script to deploy to production server"
+                    echo "ansible-playbook deploy-to-production.yml"
+            }
+            post {
+                always {
+                    mail to: "s224083967@deakin.edu.au",
+                    subject: "Pipeline Deployed to Production Success Notification",
+                    body: "The pipeline has deployed to production successfully."
+                }
+            }
+        }
+    }
+}
