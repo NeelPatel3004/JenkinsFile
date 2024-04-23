@@ -1,8 +1,7 @@
 pipeline {
     agent any
-    
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
                     echo "Use a build automation tool like Maven"
                     echo "mvn clean package"
@@ -15,7 +14,7 @@ pipeline {
                 }
             }
         }
-        stage('Unit and Integration Tests') {
+        stage("Unit and Integration Tests") {
             steps {
                     echo "Use test automation tools like JUnit or TestNG for unit tests"
                     echo "mvn test"
@@ -28,7 +27,7 @@ pipeline {
                 }
             }
         }
-        stage('Code Analysis') {
+        stage("Code Analysis") {
             steps {
                     echo "Use a code analysis tool like SonarQube"
                     echo "Install and configure SonarQube Scanner in Jenkins"
@@ -42,7 +41,7 @@ pipeline {
                 }
             }
         }
-        stage('Security Scan') {
+        stage("Security Scan") {
             steps {
                     echo "Use a security scanning tool like OWASP Dependency-Check"
                     echo "Install and configure Dependency-Check in Jenkins"
@@ -69,7 +68,7 @@ pipeline {
                 }
             }
         }
-        stage('Integration Tests on Staging') {
+        stage("Integration Tests on Staging") {
             steps {
                     echo "Run integration tests on the staging environment"
                     echo "mvn integration-test"
@@ -82,7 +81,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Production') {
+        stage("Deploy to Production") {
             steps {
                     echo "Use a deployment tool or script to deploy to production server"
                     echo "ansible-playbook deploy-to-production.yml"
