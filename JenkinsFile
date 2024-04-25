@@ -8,7 +8,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Build Success Notification",
                     body: "The pipeline has builed successfully."
                 }
@@ -21,7 +21,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Unit and Integration Test Success Notification",
                     body: "The pipeline has integrated successfully."
                 }
@@ -35,7 +35,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Code Analysis Success Notification",
                     body: "The pipeline has analysed successfully."
                 }
@@ -49,7 +49,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Security Scan Success Notification",
                     body: "The pipeline has secured successfully."
                 }
@@ -62,7 +62,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Deploted Success Notification",
                     body: "The pipeline has deployed successfully."
                 }
@@ -75,7 +75,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Integrated Test on Staging Success Notification",
                     body: "The pipeline has staging integration successfully."
                 }
@@ -88,7 +88,7 @@ pipeline {
             }
             post {
                 always {
-                    mail to: "s224083967@deakin.edu.au",
+                    mail to: "patelneelnp3004@gmail.com",
                     subject: "Pipeline Deployed to Production Success Notification",
                     body: "The pipeline has deployed to production successfully."
                 }
